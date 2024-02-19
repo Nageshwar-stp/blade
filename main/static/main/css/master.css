@@ -2,7 +2,8 @@
     width: 90%;
     margin: auto;
     margin-top: 120px;
-    margin-bottom: 50px;
+    padding-bottom: 80px;
+    position: relative;
 }
 
 
@@ -301,4 +302,37 @@
 
 .logout-btn:hover {
     background: var(--text);
+}
+
+
+.brand-text {
+    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 280px;
+    transform: translateX(-50%);
+    font-weight: 400;
+    padding: 8px 10px;
+    background: white;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.brand-text:hover i {
+    color: violet;
+}
+
+.brand-text i {
+    font-size: 14px;
+    color: crimson;
+}
+
+.brand-text span {
+    color: var(--primary);
+    font-weight: 600;
 }
