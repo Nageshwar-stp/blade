@@ -1,0 +1,304 @@
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
+
+.container-head {
+    font-size: 24px;
+    text-align: center;
+    color: var(--text-dull);
+    width: 600px;
+    margin: auto;
+    font-family: "Kanit";
+}
+
+.container-head span {
+    color: var(--primary);
+}
+
+.container-form {
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px var(--shadow);
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+    font-family: "Kanit";
+}
+
+.form-head {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dull);
+}
+
+.form-head span {
+    color: crimson;
+    margin-left: 3px;
+}
+
+.form-input {
+    width: 340px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Kanit";
+    border: none;
+    border-radius: 10px;
+    background: rgb(250, 250, 250);
+    color: var(--text);
+    outline: none;
+    border: 1px solid var(--bg-dull);
+}
+
+.form-input:focus {
+    border: 1px solid var(--primary);
+}
+
+.submit-btn {
+    width: 100%;
+    font-family: "Kanit";
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: var(--primary);
+    border: none;
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: var(--primary-dull);
+}
+
+
+.form-note {
+    font-size: 14px;
+    width: 100%;
+    background: var(--bg);
+    padding: 4px 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--text);
+    font-family: "Kanit";
+}
+
+.form-note span {
+    color: var(--primary);
+}
+
+.form-warn {
+    font-size: 12px;
+    text-align: center;
+    font-family: "Kanit";
+    color: gray;
+}
+
+.input-note {
+    font-size: 12px;
+    width: 100%;
+    background: var(--bg);
+    padding: 4px 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: gray;
+    font-family: "Kanit";
+}
+
+@media (max-width: 680px) {
+    .container {
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .container-head {
+        font-size: 18px;
+    }
+
+    .container-form {
+        width: 95%;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .container-head {
+        width: 95%;
+    }
+
+    .form-item {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .form-input {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 10px;
+        background: var(--bg-dull);
+    }
+
+    .form-head {
+        font-size: 15px;
+    }
+
+    .form-note,
+    .input-note {
+        background: transparent;
+    }
+}
+
+.error-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.error-message {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: crimson;
+    border-radius: 5px;
+    font-family: "Kanit";
+    padding: 4px 10px;
+    background: rgba(220, 20, 60, 0.08);
+}
+
+.success-container {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    font-family: "Kanit";
+    padding: 0px 10px;
+}
+
+.success-container h3 {
+    font-size: 24px;
+    color: var(--text-dull);
+    margin-bottom: 10px;
+}
+
+.success-container p {
+    font-size: 14px;
+    color: var(--text-dull);
+}
+
+.submission-table {
+    background: var(--bg-dull);
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: "Kanit";
+}
+
+.submission-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ddd;
+}
+
+.header {
+    font-weight: 500;
+    background-color: #f2f2f2;
+}
+
+.table-cell {
+    padding: 8px;
+    flex: 1;
+}
+
+.table-cell:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.download-report-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    background: var(--bg-dull);
+    padding: 10px 12px;
+    border-radius: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.download-report-form select {
+    width: 340px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Kanit";
+    border: none;
+    border-radius: 10px;
+    background: rgb(250, 250, 250);
+    color: var(--text);
+    outline: none;
+    border: 1px solid var(--bg-dull);
+}
+
+.download-report-form button {
+    width: 200px;
+    font-family: "Kanit";
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: var(--primary);
+    border: none;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .download-report-form button,
+    .download-report-form select {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+.logout-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px 15px;
+    font-family: "Kanit";
+    font-size: 14px;
+    background: var(--text-dull);
+    color: var(--bg);
+    border-radius: 10px 0px 0px 0px;
+}
+
+.logout-btn:hover {
+    background: var(--text);
+}

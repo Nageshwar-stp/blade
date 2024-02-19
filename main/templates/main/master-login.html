@@ -1,0 +1,154 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block head %}
+{% endblock head %}
+{% block title %} Admin Login | Registration Form | Euphoric 2024 {% endblock title %}
+
+{% block body %}
+{% include "main/topbar.html" %}
+
+<section class="container">
+    <h2 class="container-head">Admin Login</h2>
+    <form action="" class="register-form" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" maxlength="50" name="username" placeholder="Admin's Username" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Admin's Password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</section>
+
+<style>
+    .register-form {
+        width: 35%;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 15px;
+    }
+
+    .input-group {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        width: 80%;
+        padding: 8px 12px;
+        outline: none;
+        font-size: 15px;
+        font-family: 'Kanit';
+        border: none;
+        border-radius: 10px;
+        border: 1px solid var(--bg-dull);
+    }
+
+    .input-group textarea {
+        font-size: 13px;
+        min-height: 120px;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+        border: 1px solid var(--primary);
+    }
+
+    .input-group textarea::placeholder {
+        color: black;
+    }
+
+    .input-group label {
+        width: 20%;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-dull);
+    }
+
+    .register-form button {
+        border: none;
+        background: var(--primary);
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: var(--bg);
+        font-weight: 500;
+        padding: 8px 12px;
+        margin-top: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Kanit';
+    }
+
+    .register-form button:hover {
+        background: var(--primary-dull);
+    }
+
+    .register-form small {
+        font-size: 12px;
+        color: rgb(180, 180, 180);
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 1000px) {
+        .register-form {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .register-form {
+            width: 96%;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 85%;
+        }
+
+        .input-group label {
+            width: 15%;
+        }
+    }
+
+    .messages {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 15px 10px;
+        list-style: none;
+        font-size: 14px;
+    }
+
+    .messages li {
+        padding: 5px 20px;
+        text-align: center;
+    }
+
+    .error {
+        color: crimson;
+        background: rgba(220, 20, 60, 0.08);
+        border: 1px solid rgba(220, 20, 60, 0.3);
+    }
+
+    .success {
+        color: var(--accent);
+        background: rgb(0, 0, 200, 0.08);
+        border: 1px solid rgb(0, 0, 200, 0.3);
+    }
+</style>
+
+{% endblock body %}

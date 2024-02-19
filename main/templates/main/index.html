@@ -1,0 +1,101 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Registration Form | Euphoric 2024{% endblock title %}
+{% block head %}{% endblock head %}
+
+{% block body %}
+{% include 'main/topbar.html' %}
+<section class="container">
+    <h1 class="container-head"><span>Euphoric 2024</span> Event Registration</h1>
+    <form action="" class="container-form" method="POST">
+        {% csrf_token %}
+        {% if messages %}
+        <div class="error-box">
+            {% for message in messages %}
+            <p class="error-message">{{message}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="form-item">
+            <h3 class="form-head">Admission ID<span>*</span></h3>
+            <input type="text" name="admission" class="form-input" placeholder="eg. 21CS0XX" required>
+        </div>
+        <div class="form-item">
+            <h3 class="form-head">Full Name<span>*</span></h3>
+            <input type="text" name="name" class="form-input" placeholder="eg. John Wick" required>
+        </div>
+        <div class="form-item">
+            <h3 class="form-head">Gender<span>*</span></h3>
+            <select name="gender" class="form-input">
+                <option value="male">Male</option>
+                <option value="male">Female</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <h3 class="form-head">Phone (WhatsApp)<span>*</span></h3>
+            <input type="number" name="phone" class="form-input" placeholder="eg. 9812XXXXXX" required>
+        </div>
+        <p class="input-note">Only College Email Address is allowed (sanskar.org)</p>
+        <div class="form-item">
+            <h3 class="form-head">Email Address<span>*</span></h3>
+            <input type="email" name="email" class="form-input" placeholder="eg. student@sanskar.org" required>
+        </div>
+
+        <div class="form-item">
+            <h3 class="form-head">Course<span>*</span></h3>
+            <select name="course" class="form-input">
+                {% for course in courses %}
+                <option value="{{course}}">{{course}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-item">
+            <h3 class="form-head">Year<span>*</span></h3>
+            <select name="year" class="form-input">
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <h3 class="form-head">Branch (if Applied)</h3>
+            <input type="text" name="branch" class="form-input" placeholder="eg. CSE">
+        </div>
+        <p class="form-note">
+            <span>Note:</span> Student can only register for maximum of two Events
+        </p>
+        <div class="form-item">
+            <h3 class="form-head">Event 1<span>*</span></h3>
+            <select name="event-1" class="form-input">
+                <option selected disabled>Select Event</option>
+                {% for event in events %}
+                <option value="{{event}}">{{event}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-item">
+            <h3 class="form-head">Event 2 (Optional)</h3>
+            <select name="event-2" class="form-input">
+                <option selected>None</option>
+                {% for event in events %}
+                <option value="{{event}}">{{event}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        {% if messages %}
+        <div class="error-box">
+            {% for message in messages %}
+            <p class="error-message">{{message}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <button class="submit-btn">Register</button>
+        <p class="form-warn">
+            Student will be eliminated if details provided by him/her is incorrect or incomplete.
+        </p>
+    </form>
+</section>
+{% endblock body %}

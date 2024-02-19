@@ -1,0 +1,40 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px 60px;
+    top: 0;
+    position: fixed;
+}
+
+.nav-logo {
+    height: 70px;
+    -webkit-user-drag: none;
+}
+
+.nav-head {
+    font-size: 20px;
+    color: var(--text-dull);
+    font-family: "Kanit";
+    user-select: none;
+}
+
+.nav-head span {
+    color: var(--primary);
+}
+
+@media (max-width:650px) {
+    .navbar {
+        padding: 10px 14px;
+    }
+
+    .nav-logo {
+        height: 40px;
+    }
+
+    .nav-head {
+        font-size: 12px;
+    }
+}
