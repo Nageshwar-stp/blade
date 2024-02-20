@@ -36,9 +36,11 @@
             <input type="number" name="phone" class="form-input" placeholder="eg. 9812XXXXXX" required>
         </div>
         <p class="input-note">Only College Email Address is allowed (sanskar.org)</p>
+        <p class="short-error" id="email-error">Invalid Email. Only sanskar.org email addresses are allowed.</p>
         <div class="form-item">
             <h3 class="form-head">Email Address<span>*</span></h3>
-            <input type="email" name="email" class="form-input" placeholder="eg. student@sanskar.org" required>
+            <input type="email" name="email" class="form-input" placeholder="eg. student@sanskar.org" required
+                id="email" onchange="onEmailEnter()">
         </div>
 
         <div class="form-item">
@@ -68,7 +70,7 @@
         </p>
         <div class="form-item">
             <h3 class="form-head">Event 1<span>*</span></h3>
-            <select name="event-1" class="form-input">
+            <select name="event-1" class="form-input" id="event-1" onchange="onEventChange()">
                 <option selected disabled>Select Event</option>
                 {% for event in events %}
                 <option value="{{event}}">{{event}}</option>
@@ -77,13 +79,14 @@
         </div>
         <div class="form-item">
             <h3 class="form-head">Event 2 (Optional)</h3>
-            <select name="event-2" class="form-input">
+            <select name="event-2" class="form-input" id="event-2" onchange="onEventChange()">
                 <option selected>None</option>
                 {% for event in events %}
                 <option value="{{event}}">{{event}}</option>
                 {% endfor %}
             </select>
         </div>
+        <p class="short-error" id="event-error">Both Events can not be same</p>
 
         {% if messages %}
         <div class="error-box">
@@ -102,4 +105,50 @@
         Designed with <i class="ri-heart-fill"></i> by <span>Nageshwar Tripathi</span>
     </div>
 </section>
+<style>
+    .short-error {
+        font-size: 12px;
+        color: crimson;
+        width: 100%;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background: rgba(220, 20, 60, 0.1);
+        display: none;
+    }
+</style>
+<script>
+
+    const onEmailEnter = () => {
+        const email = document.getElementById('email').value;
+        const domainRegex = /@sanskar\.org$/;
+        if (email !== '') {
+            document.getElementById('email-error').style.display = 'none';
+            document.getElementById('email').style.border = "1px solid var(--bg-dull)"
+            if (domainRegex.test(email)) {
+                document.getElementById('email-error').style.display = 'none';
+                document.getElementById('email').style.border = "1px solid var(--bg-dull)"
+            } else {
+                document.getElementById('email-error').style.display = 'block';
+                document.getElementById('email').style.border = "1px solid crimson"
+            }
+        }
+
+    }
+
+    const onEventChange = () => {
+        const event1 = document.getElementById('event-1').value;
+        const event2 = document.getElementById('event-2').value;
+        if (event1 != null && event2 != null) {
+            if (event1 === event2) {
+                document.getElementById("event-error").style.display = 'block';
+            }
+            else {
+                document.getElementById("event-error").style.display = 'none';
+            }
+        }
+    }
+
+
+</script>
 {% endblock body %}
