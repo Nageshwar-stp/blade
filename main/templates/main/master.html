@@ -10,7 +10,7 @@
     <form action="/download-report/" method="post" class="download-report-form">
         {% csrf_token %}
         <select name="category" id="event" required>
-            <option selected disabled>Select Category</option>
+            <option selected disabled>Select Category to Download</option>
             <option value="all">All</option>
             {% for category in categories %}
             <option value="{{category.name}}">{{category.name}}</option>
@@ -22,16 +22,20 @@
         </select>
         <button type="submit">Download Submissions</button>
     </form>
-    <div class="submission-table">
+    <p
+        style="font-size: 14px; font-weight: 500; font-family:'Kanit'; width: 100%; text-align: center; background: var(--bg-dull); margin: 8px 0px; padding: 5px 0; border-radius: 10px;">
+        Total <span style="color: var(--primary);">{{count}}</span> Submissions Recorded
+    </p>
+    <div class=" submission-table">
         <div class="table-row header">
             <div class="table-cell">Admission</div>
             <div class="table-cell">Name</div>
             <div class="table-cell">Email</div>
-            <div class="table-cell">Gender</div>
+            <div class="table-cell gender">Gender</div>
             <div class="table-cell">Phone</div>
             <div class="table-cell">Course</div>
             <!-- <div class="table-cell">Branch</div> -->
-            <div class="table-cell">Year</div>
+            <div class="table-cell year">Year</div>
             <div class="table-cell">Event 1</div>
             <div class="table-cell">Event 2</div>
         </div>
@@ -41,11 +45,11 @@
             <div class="table-cell">{{ data.admission }}</div>
             <div class="table-cell">{{ data.name }}</div>
             <div class="table-cell">{{ data.email }}</div>
-            <div class="table-cell">{{ data.gender }}</div>
+            <div class="table-cell gender">{{ data.gender }}</div>
             <div class="table-cell">{{ data.phone }}</div>
             <div class="table-cell">{{ data.course }}</div>
             <!-- <div class="table-cell">{{ data.branch }}</div> -->
-            <div class="table-cell">{{ data.year }}</div>
+            <div class="table-cell year">{{ data.year }}</div>
             <div class="table-cell">{{ data.event_1 }}</div>
             <div class="table-cell">{{ data.event_2 }}</div>
         </div>

@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
-from .models import Event, EventCategory, FormData, Course, Master
+from .models import Event, EventCategory, FormData, Course, Master, EventCoordinator, CategoryCoordinator, CategoryCoordinatorStudent
 from django.contrib import messages
 from django.db.models import Q
 from django.http import HttpResponse
@@ -94,7 +94,8 @@ def master(request):
         data = {
             'submissions': submissions,
             'categories': category,
-            'courses': courses
+            'courses': courses,
+            'count': len(submissions)
         }
         return render(request, 'main/master.html', data)
     else:
@@ -185,3 +186,27 @@ def logout(request):
         pass
 
     return redirect('/')
+
+
+def coordinators(request):
+    event_categories = EventCategory.objects.all()
+
+    category_coordinators_list = []
+    category_coordinators_stu_list = []
+    for cat in event_categories:
+        coordinators = CategoryCoordinator.objects.filter(category=cat).all()
+        category_coordinators_list.append((cat.name, coordinators))
+
+        coordinators_stu = CategoryCoordinatorStudent.objects.filter(
+            category=cat).all()
+        category_coordinators_stu_list.append((cat.name, coordinators_stu))
+
+    event_coordinators = EventCoordinator.objects.all().order_by('event')
+
+    data = {
+        'categories': category_coordinators_list,
+        'categoreis_stu': category_coordinators_stu_list,
+        'event_coordinators': event_coordinators,
+        'blank_event_list': True if len(event_coordinators) == 0 else False
+    }
+    return render(request, 'main/coordinators.html', data)

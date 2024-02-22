@@ -49,3 +49,31 @@ class Master(models.Model):
 
     def __str__(self):
         return self.username
+
+
+class CategoryCoordinator(models.Model):
+    category = models.ForeignKey(EventCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    department = models.CharField(max_length=30, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.category} - {self.name}"
+
+
+class CategoryCoordinatorStudent(models.Model):
+    category = models.ForeignKey(EventCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    department = models.CharField(max_length=30, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.category} - {self.name}"
+
+
+class EventCoordinator(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    year = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.event} - {self.name}"
