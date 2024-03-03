@@ -11,7 +11,6 @@
 .cover-image-section {
     width: 55%;
     height: 100%;
-    background-color: black;
     background: url('/static/main/images/sb-1.jpg');
     background-position: center;
     background-size: cover;
@@ -31,6 +30,7 @@
 .cover-text-section {
     padding: 80px 50px;
     background: black;
+    background: linear-gradient(to bottom, black, rgb(40, 40, 40));
     width: 45%;
     color: var(--bg);
     height: 100%;
@@ -43,6 +43,7 @@
 
 .cover-subhead {
     font-size: 35px;
+    margin-bottom: 10px;
     color: var(--bg-dull);
 }
 
@@ -50,11 +51,25 @@
     font-size: 64px;
     text-transform: uppercase;
     color: orange;
+    margin-top: -15px;
+    text-shadow: 2px 2px 0px rgb(80, 80, 80);
 }
 
 .cover-head span {
     color: white;
 
+}
+
+.cover-dated {
+    font-size: 14px;
+    color: var(--bg-dull);
+    text-align: right;
+    float: right;
+    background: var(--bg);
+    color: var(--text-dull);
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-weight: 500;
 }
 
 .cover-text {
@@ -105,6 +120,10 @@
     color: var(--bg-dull);
 }
 
+#mobile-bracket {
+    display: none;
+}
+
 @media (max-width: 1200px) {
 
     .cover-image-section,
@@ -118,6 +137,7 @@
 
     .cover-head {
         font-size: 52px;
+        margin-top: -10px;
     }
 }
 
@@ -159,6 +179,12 @@
 
     .cover-head {
         font-size: 42px;
+        margin-top: -5px;
+    }
+
+    .cover-dated {
+        font-size: 12px;
+        padding: 4px 8px;
     }
 
     .cover-text {
@@ -173,5 +199,152 @@
     .cover-action-second {
         font-size: 12px;
         padding: 5px 10px;
+    }
+}
+
+.event-section {
+    width: 95%;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.event-header {
+    text-align: center;
+    font-size: 28px;
+    color: var(--text-dull);
+    margin-bottom: 40px;
+    font-family: "Kanit";
+    font-weight: 600;
+}
+
+.events-bracket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.event-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event-card {
+    width: 100%;
+    padding: 30px 30px 50px 30px;
+    border-radius: 10px;
+    border: 1px solid var(--shadow);
+    background: var(--bg-dull);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kanit";
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--shadow);
+}
+
+.event-row .Sports {
+    background: url('/static/main/images/sports.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-row .Technical {
+    background: url('/static/main/images/technical.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-row .Cultural {
+    background: url('/static/main/images/cultural.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+}
+
+.event-card-head {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    text-shadow: 0px 0px 5px white;
+}
+
+.event-card-category {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--primary);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    left: 0;
+}
+
+@media (max-width: 1000px) {
+    .event-card {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 800px) {
+    .event-card {
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    #desktop-bracket {
+        display: none;
+    }
+
+    #mobile-bracket {
+        display: flex;
+    }
+
+    .event-section {
+        width: 96%;
+        padding: 50px 10px;
+    }
+
+    .event-header {
+        font-size: 22px;
+    }
+
+    .events-bracket {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .event-row {
+        gap: 10px;
+    }
+
+    .event-card {
+        width: 100%;
+        min-height: auto;
+        padding: 10px;
+        padding-bottom: 30px;
+    }
+
+    .event-card-head {
+        font-size: 11px;
+    }
+
+    .event-card-category {
+        font-size: 10px;
     }
 }

@@ -14,6 +14,7 @@
     </div>
     <div class="cover-text-section">
         <h2 class="cover-subhead">Sanskar Educationl Group</h2>
+        <h3 class="cover-dated">8th April - 13th April, 2024</h3>
         <h1 class="cover-head">Euphoric <span>2024</span></h1>
         <p class="cover-text">
             Euphoric is the annual festival of <a href="https://sanskareducationalgroup.ac.in/" target="_blank">Sanskar
@@ -30,11 +31,40 @@
         </p>
         <div class="cover-action-wrapper">
             <a href="/register/" class="cover-action">Participate Now</a>
-            <a href="#" class="cover-action-second">Check Events</a>
+            <a href="#events" class="cover-action-second">Check Events</a>
         </div>
     </div>
 </section>
+<section class="event-section" id="events">
+    <h2 class="event-header">Events @Euphoric 2024</h2>
+    <div class="events-bracket" id="desktop-bracket">
+        {% for event_ in events %}
+        <div class="event-row">
+            {% for event in event_ %}
+            <a class="event-card {{event.category}}" href="/register/?event1={{event.name}}"
+                title="Click to Participate">
+                <h3 class="event-card-head">{{event.name}}</h3>
+                <h4 class="event-card-category">{{event.category}}</h4>
+            </a>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="events-bracket" id="mobile-bracket">
+        {% for event_ in events_mb %}
+        <div class="event-row">
+            {% for event in event_ %}
+            <a class="event-card {{event.category}}" href="/register/?event1={{event.name}}" title="Click to Participate">
+                <h3 class="event-card-head">{{event.name}}</h3>
+                <h4 class="event-card-category">{{event.category}}</h4>
+            </a>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
 
+</section>
+{% include 'main/brand.html' %}
 <script>
     document.getElementById('home').style.color = "var(--primary)";
 

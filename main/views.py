@@ -8,10 +8,32 @@ import csv
 
 
 def home(request):
-    return render(request, 'main/home.html')
+    events = Event.objects.all().order_by('name')
+    chunk_size = 5
+    event_chunks = [events[i:i+chunk_size]
+                    for i in range(0, len(events), chunk_size)]
+    chunk_size = 2
+    event_chunks_mb = [events[i:i+chunk_size]
+                       for i in range(0, len(events), chunk_size)]
+
+    event_categories = EventCategory.objects.all()
+
+    category_event_list = []
+    for cat in event_categories:
+        events = Event.objects.filter(category=cat).all()
+        category_event_list.append((cat.name, events))
+
+    data = {
+        'events': event_chunks,
+        'events_mb': event_chunks_mb,
+        'events_ct': category_event_list
+    }
+    return render(request, 'main/home.html', data)
 
 
 def index(request):
+    mode = request.GET.get('event1')
+    print(mode)
     events = Event.objects.all().order_by('name')
     event_categories = EventCategory.objects.all()
     formData = FormData.objects.all()
@@ -20,7 +42,8 @@ def index(request):
     data = {
         'events': events,
         'event_categories': event_categories,
-        'courses': courses
+        'courses': courses,
+        'mode': mode,
     }
 
     if request.method == 'POST':

@@ -73,7 +73,7 @@
             <select name="event-1" class="form-input" id="event-1" onchange="onEventChange()">
                 <option selected disabled>Select Event</option>
                 {% for event in events %}
-                <option value="{{event}}">{{event}}</option>
+                <option value="{{event}}" {% if mode == event.name %} selected {%endif%} >{{event}}</option>
                 {% endfor %}
             </select>
         </div>
@@ -101,10 +101,9 @@
         </p>
     </form>
 
-    <div class="brand-text">
-        Designed with <i class="ri-heart-fill"></i> by <span>Nageshwar Tripathi</span>
-    </div>
+    
 </section>
+{% include 'main/brand.html' %}
 <style>
     .short-error {
         font-size: 12px;

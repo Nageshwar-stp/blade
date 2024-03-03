@@ -1,11 +1,10 @@
 .container {
     width: 90%;
     margin: auto;
-    margin-top: 120px;
-    padding-bottom: 80px;
-    position: relative;
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 20px;
 }
-
 
 .container-head {
     font-size: 24px;
@@ -127,7 +126,8 @@
 @media (max-width: 680px) {
     .container {
         width: 100%;
-        margin-top: 70px;
+        margin-top: 0px;
+        padding-top: 70px;
     }
 
     .container-head {
@@ -310,37 +310,4 @@
 
 .logout-btn:hover {
     background: var(--text);
-}
-
-
-.brand-text {
-    font-size: 11px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 280px;
-    transform: translateX(-50%);
-    font-weight: 400;
-    padding: 8px 10px;
-    background: white;
-    border-radius: 10px 10px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    cursor: pointer;
-}
-
-.brand-text:hover i {
-    color: violet;
-}
-
-.brand-text i {
-    font-size: 14px;
-    color: crimson;
-}
-
-.brand-text span {
-    color: var(--primary);
-    font-weight: 600;
 }

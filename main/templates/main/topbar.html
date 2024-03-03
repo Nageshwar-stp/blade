@@ -6,13 +6,30 @@
     <div class="nav-action">
         <div class="nav-menu">
             <a href="/" class="nav-menu-item" id="home">Home<i class="ri-arrow-down-s-line"></i></a>
-            <a href="/" class="nav-menu-item" id="events">Events<i class="ri-arrow-down-s-line"></i></a>
+            <a href="/" class="nav-menu-item" id="schedule">Schedule<i class="ri-arrow-down-s-line"></i></a>
             <a href="/coordinators/" class="nav-menu-item" id="coordinators">Coordinators<i
                     class="ri-arrow-down-s-line"></i></a>
+            <i class="ri-close-large-fill" id="closeNavBtn"></i>
+
         </div>
-        <!-- <a class="nav-head" href="/">EUPHORIC <span>2024</span></a> -->
-        <!-- <a href="/coordinators/" class="nav-action-item">Coordinators</a> -->
+        <i class="ri-menu-unfold-2-fill" id="openNavBtn"></i>
         <a href="/register/" class="nav-action-item">Participate</a>
-        <!-- <a href="/coordinators/" class="nav-action-item">Coordinators</a> -->
     </div>
 </nav>
+
+<script>
+    const openNavBtn = document.getElementById('openNavBtn');
+    const closeNavBtn = document.getElementById('closeNavBtn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    openNavBtn.addEventListener('click', () => {
+        navMenu.style.display = 'flex';
+    });
+
+    closeNavBtn.addEventListener('click', () => {
+
+        navMenu.style.display = 'none';
+
+    });
+
+</script>
