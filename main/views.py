@@ -7,6 +7,10 @@ from django.http import HttpResponse
 import csv
 
 
+def home(request):
+    return render(request, 'main/home.html')
+
+
 def index(request):
     events = Event.objects.all().order_by('name')
     event_categories = EventCategory.objects.all()

@@ -1,0 +1,177 @@
+.cover {
+    width: 100%;
+    height: 90vh;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.cover-image-section {
+    width: 55%;
+    height: 100%;
+    background-color: black;
+    background: url('/static/main/images/sb-1.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: opacity 1s ease-in-out;
+}
+
+.cover-source-text {
+    position: absolute;
+    color: var(--bg);
+    font-size: 10px;
+    bottom: 10px;
+    left: 20px;
+    text-shadow: 0px 0px 10px black;
+}
+
+.cover-text-section {
+    padding: 80px 50px;
+    background: black;
+    width: 45%;
+    color: var(--bg);
+    height: 100%;
+    font-family: "Kanit";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cover-subhead {
+    font-size: 35px;
+    color: var(--bg-dull);
+}
+
+.cover-head {
+    font-size: 64px;
+    text-transform: uppercase;
+    color: orange;
+}
+
+.cover-head span {
+    color: white;
+
+}
+
+.cover-text {
+    font-size: 15px;
+    margin-top: 20px;
+    font-family: "Poppins";
+    color: rgb(200, 200, 200);
+}
+
+.cover-text a {
+    color: orange;
+}
+
+.cover-action-wrapper {
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.cover-action {
+    font-size: 16px;
+    padding: 8px 20px;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.cover-action:hover {
+    background: var(--primary-dull);
+}
+
+.cover-action-second {
+    font-size: 16px;
+    padding: 8px 20px;
+    background: var(--text-dull);
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.cover-action-second:hover {
+    color: var(--bg-dull);
+}
+
+@media (max-width: 1200px) {
+
+    .cover-image-section,
+    .cover-text-section {
+        width: 50%;
+    }
+
+    .cover-subhead {
+        font-size: 25px;
+    }
+
+    .cover-head {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 950px) {
+    .cover {
+        flex-direction: column-reverse;
+        height: auto;
+        padding-top: 45px;
+        margin: 0;
+
+    }
+
+    .cover-image-section,
+    .cover-text-section {
+        width: 100%;
+    }
+
+    .cover-image-section {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 650px) {
+    .cover {
+        flex-direction: column;
+    }
+
+    .cover-image-section {
+        height: 250px;
+    }
+
+    .cover-text-section {
+        padding: 30px 15px;
+    }
+
+    .cover-subhead {
+        font-size: 18px;
+    }
+
+    .cover-head {
+        font-size: 42px;
+    }
+
+    .cover-text {
+        font-size: 12px;
+    }
+
+    .cover-action-wrapper {
+        gap: 10px;
+    }
+
+    .cover-action,
+    .cover-action-second {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}

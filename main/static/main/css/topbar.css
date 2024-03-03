@@ -49,9 +49,8 @@
 .nav-action-item {
     font-size: 14px;
     background: var(--primary);
-    padding: 5px 10px;
+    padding: 5px 20px;
     border-radius: 8px;
-    text-transform: uppercase;
     font-weight: 500;
     color: white;
     cursor: pointer;
@@ -69,6 +68,24 @@
 
 .nav-action-link:hover {
     color: var(--primary-dull);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    margin-right: 20px;
+}
+
+.nav-menu-item {
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.nav-menu-item:hover {
+    color: var(--text-dull);
 }
 
 @media (max-width:650px) {

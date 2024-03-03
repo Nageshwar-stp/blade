@@ -1,0 +1,87 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Euphoric 2024 | Sanskar Educationl Group{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+{% endblock head %}
+
+{% block body %}
+{% include 'main/topbar.html' %}
+
+<section class="cover">
+    <div class="cover-image-section" id="background">
+        <small class="cover-source-text" id="background-source">Image: Sagar Bhatia, Euphoric 2023</small>
+    </div>
+    <div class="cover-text-section">
+        <h2 class="cover-subhead">Sanskar Educationl Group</h2>
+        <h1 class="cover-head">Euphoric <span>2024</span></h1>
+        <p class="cover-text">
+            Euphoric is the annual festival of <a href="https://sanskareducationalgroup.ac.in/" target="_blank">Sanskar
+                Educational Group</a> that incorporates a wide range
+            of
+            dynamic
+            events. Euphoric aims to ignite the competitive spirit among young minds. It provides them with a plethora
+            of competitions and activities to perform and sharpen up their skills.
+        </p>
+        <p class="cover-text">
+            Helps the students in enhancing their knowledge, aptitude and problem-solving ability. Our
+            objective is to provide a fun and practical experience which will help the participants in improving their
+            research and analytical thinking skills.
+        </p>
+        <div class="cover-action-wrapper">
+            <a href="/register/" class="cover-action">Participate Now</a>
+            <a href="#" class="cover-action-second">Check Events</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('home').style.color = "var(--primary)";
+
+
+    document.getElementById('home').style.color = "var(--primary)";
+
+    const backgrounds = [
+        "url('/static/main/images/sb-1.jpg')",
+        "url('/static/main/images/trophy-celeb.jpg')",
+        "url('/static/main/images/sb-2.jpg')",
+        "url('/static/main/images/perform-1.jpg')",
+        "url('/static/main/images/sb-3.jpg')",
+        "url('/static/main/images/stu-1.jpg')",
+        "url('/static/main/images/sb-4.jpg')",
+        "url('/static/main/images/utsav-1.jpg')",
+    ];
+    const backgroundSources = [
+        "Image: Sagar Bhatia, Euphoric 2023",
+        "Image: Trophy Ceremony, Euphoric 2023",
+        "Image: Sagar Bhatia, Euphoric 2023",
+        "Image: Students Performing, Euphoric 2023",
+        "Image: Sagar Bhatia, Euphoric 2023",
+        "Image: Student Performing, Euphoric 2023",
+        "Image: Sagar Bhatia, Euphoric 2023",
+        "Image: Student Performing, Euphoric 2023",
+    ];
+
+    let currentIndex = 0;
+    const backgroundElement = document.getElementById('background');
+    const backgroundSource = document.getElementById('background-source');
+
+    function changeBackground() {
+        backgroundElement.style.opacity = 0;
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            backgroundElement.style.backgroundImage = backgrounds[currentIndex];
+            backgroundSource.innerHTML = backgroundSources[currentIndex]; // Corrected line
+            backgroundElement.style.opacity = 1;
+        }, 800);
+    }
+
+    backgroundElement.style.backgroundImage = backgrounds[currentIndex];
+    backgroundSource.innerHTML = backgroundSources[currentIndex]; // Corrected line
+
+    // Start changing backgrounds
+    setInterval(changeBackground, 5000); // Repeat every 5 seconds
+
+
+</script>
+{% endblock body %}
