@@ -21,6 +21,17 @@
         {% endfor %}
     </div>
     <hr>
+    <div class="coordinators-prime">
+        {% for category, coordinators in categories_fac %}
+        <div class="prime-item">
+            <h3 class="prime-head">{{ category }}</h3>
+            {% for coordinator in coordinators %}
+            <p class="prime-item-text">{{ coordinator.name }} <span>({{coordinator.department}})</span></p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
     <h3 class="container-sub-head">Student Coordinators</h3>
     <div class="coordinators-prime">
         {% for category, coordinators in categoreis_stu %}
@@ -50,7 +61,7 @@
     </div>
 
 
-    
+
 </section>
 {% include 'main/brand.html' %}
 

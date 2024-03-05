@@ -35,6 +35,22 @@
         </div>
     </div>
 </section>
+<section class="key-section">
+    <h3 class="key-header">Attraction @Euphoric 2024</h3>
+    <div class="key-wrapper">
+        <div class="key-card" id="key-card-1">
+            <h1>Stand-Up Comedy</h1>
+        </div>
+        <div class="key-card" id="key-card-2">
+            <h1>Band</h1>
+        </div>
+        <div class="key-card" id="key-card-3">
+            <h1>DJ Night</h1>
+        </div>
+    </div>
+</section>
+
+</section>
 <section class="event-section" id="events">
     <h2 class="event-header">Events @Euphoric 2024</h2>
     <div class="events-bracket" id="desktop-bracket">
@@ -54,7 +70,8 @@
         {% for event_ in events_mb %}
         <div class="event-row">
             {% for event in event_ %}
-            <a class="event-card {{event.category}}" href="/register/?event1={{event.name}}" title="Click to Participate">
+            <a class="event-card {{event.category}}" href="/register/?event1={{event.name}}"
+                title="Click to Participate">
                 <h3 class="event-card-head">{{event.name}}</h3>
                 <h4 class="event-card-category">{{event.category}}</h4>
             </a>
@@ -74,22 +91,29 @@
     const backgrounds = [
         "url('/static/main/images/sb-1.jpg')",
         "url('/static/main/images/trophy-celeb.jpg')",
+        "url('/static/main/images/spo-1.jpg')",
         "url('/static/main/images/sb-2.jpg')",
         "url('/static/main/images/perform-1.jpg')",
+        "url('/static/main/images/spo-3.jpg')",
         "url('/static/main/images/sb-3.jpg')",
         "url('/static/main/images/stu-1.jpg')",
-        "url('/static/main/images/sb-4.jpg')",
         "url('/static/main/images/utsav-1.jpg')",
+        "url('/static/main/images/spo-2.jpg')",
+        "url('/static/main/images/coor-1.jpg')",
+
     ];
     const backgroundSources = [
         "Image: Sagar Bhatia, Euphoric 2023",
         "Image: Trophy Ceremony, Euphoric 2023",
+        "Image: Basketball Match, Euphoric 2023",
         "Image: Sagar Bhatia, Euphoric 2023",
         "Image: Students Performing, Euphoric 2023",
+        "Image: Girls Volleyball Team, Euphoric 2023",
         "Image: Sagar Bhatia, Euphoric 2023",
         "Image: Student Performing, Euphoric 2023",
-        "Image: Sagar Bhatia, Euphoric 2023",
         "Image: Student Performing, Euphoric 2023",
+        "Image: Volleyball Match, Euphoric 2023",
+        "Image: Award Distribution, Euphoric 2023",
     ];
 
     let currentIndex = 0;

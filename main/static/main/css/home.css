@@ -348,3 +348,73 @@
         font-size: 10px;
     }
 }
+
+.key-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 50px 0px;
+    background: var(--text);
+    background: linear-gradient(to bottom, var(--text) 50%, var(--bg) 50%);
+    color: var(--bg);
+}
+
+.key-header {
+    text-align: center;
+    font-size: 28px;
+    color: var(--bg-dull);
+    font-family: "Kanit";
+    font-weight: 600;
+}
+
+.key-wrapper {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.key-card {
+    width: 100%;
+    padding: 20px;
+    background: var(--bg);
+    text-align: center;
+    border-radius: 10px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.key-card h1 {
+    font-size: 25px;
+    font-family: "Kanit";
+    color: var(--bg);
+    background: var(--text);
+    border-radius: 10px;
+    padding: 3px 10px;
+}
+
+#key-card-1 {
+    background: url("/static/main/images/cards/mic.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#key-card-2 {
+    background: url("/static/main/images/cards/drum.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#key-card-3 {
+    background: url("/static/main/images/cards/concert.jpg");
+    background-position: center;
+    background-size: cover;
+}
