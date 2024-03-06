@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from .models import Event, EventCategory, FormData, Course, Master, EventCoordinator, CategoryCoordinator, CategoryCoordinatorStudent
-from .models import CategoryCoordinatorFaculty
+from .models import CategoryCoordinatorFaculty, LatestNews
 from django.contrib import messages
 from django.db.models import Q
 from django.http import HttpResponse
@@ -24,12 +24,19 @@ def home(request):
         events = Event.objects.filter(category=cat).all()
         category_event_list.append((cat.name, events))
 
+    news = LatestNews.objects.all()
+
     data = {
         'events': event_chunks,
         'events_mb': event_chunks_mb,
-        'events_ct': category_event_list
+        'events_ct': category_event_list,
+        'news_': news,
     }
     return render(request, 'main/home.html', data)
+
+
+def schedule(request):
+    return render(request, 'main/Coming.html')
 
 
 def index(request):
@@ -243,4 +250,4 @@ def coordinators(request):
         'event_coordinators': event_coordinators,
         'blank_event_list': True if len(event_coordinators) == 0 else False
     }
-    return render(request, 'main/coordinators.html', data)
+    return render(request, 'main/Coming2.html', data)

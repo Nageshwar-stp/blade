@@ -35,7 +35,16 @@
         </div>
     </div>
 </section>
-<div class="div-breaker"></div>
+<div class="news-wrapper">
+    <div class="ticker-wrap">
+        <div class="ticker-heading"><i class="ri-flashlight-fill"></i> Latest Updates</div>
+        <div class="ticker">
+            {% for news in news_ %}
+            <div class="ticker__item">{{news.text}}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 <section class="key-section">
     <h3 class="key-header">Attraction @Euphoric 2024</h3>
     <div class="key-wrapper">
@@ -50,6 +59,7 @@
         </div>
     </div>
 </section>
+
 
 </section>
 <section class="event-section" id="events">
@@ -86,16 +96,13 @@
 <script>
     document.getElementById('home').style.color = "var(--primary)";
 
-
-    document.getElementById('home').style.color = "var(--primary)";
-
     const backgrounds = [
         "url('/static/main/images/sb-1.jpg')",
-        "url('/static/main/images/trophy-celeb.jpg')",
         "url('/static/main/images/spo-1.jpg')",
         "url('/static/main/images/sb-2.jpg')",
         "url('/static/main/images/perform-1.jpg')",
-        "url('/static/main/images/spo-3.jpg')",
+        "url('/static/main/images/trophy-celeb.jpg')",
+        "url('/static/main/images/spo-5.jpg')",
         "url('/static/main/images/sb-3.jpg')",
         "url('/static/main/images/stu-1.jpg')",
         "url('/static/main/images/utsav-1.jpg')",
@@ -105,11 +112,11 @@
     ];
     const backgroundSources = [
         "Image: Sagar Bhatia, Euphoric 2023",
-        "Image: Trophy Ceremony, Euphoric 2023",
         "Image: Basketball Match, Euphoric 2023",
         "Image: Sagar Bhatia, Euphoric 2023",
         "Image: Students Performing, Euphoric 2023",
-        "Image: Girls Volleyball Team, Euphoric 2023",
+        "Image: Trophy Ceremony, Euphoric 2023",
+        "Image: Cricket Team, Euphoric 2023",
         "Image: Sagar Bhatia, Euphoric 2023",
         "Image: Student Performing, Euphoric 2023",
         "Image: Student Performing, Euphoric 2023",

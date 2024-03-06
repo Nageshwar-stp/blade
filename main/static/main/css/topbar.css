@@ -107,7 +107,7 @@
         width: 100%;
         flex-direction: column;
         background: var(--bg);
-        gap: 15px;
+        gap: 20px;
         padding: 20px 30px;
         z-index: 1000;
         border-bottom: 1px solid var(--shadow);

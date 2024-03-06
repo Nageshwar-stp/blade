@@ -28,6 +28,7 @@ body {
     background: var(--bg);
     color: var(--text);
     color: var;
+    overflow-x: hidden;
 }
 
 /*-- scroll styling */

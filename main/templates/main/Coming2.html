@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Coordinators | Euphoric 2024{% endblock title %}
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+{% include 'main/topbar.html' %}
+<div class="container">
+    <h1>Euphoric 2024 Coordinators</h1>
+    <p>Will be updated soon, Stay Tuned!</p>
+</div>
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container h1 {
+        font-size: 25px;
+    }
+</style>
+<script>
+    document.getElementById('coordinators').style.color = "var(--primary)";
+</script>
+{% endblock body %}
