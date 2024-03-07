@@ -19,6 +19,7 @@ class EventCategory(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    icon = models.CharField(max_length=100, null=True, blank=True)
     category = models.ForeignKey(
         EventCategory, on_delete=models.SET_NULL, null=True)
 
