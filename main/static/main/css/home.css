@@ -583,3 +583,96 @@
     font-family: "Kanit";
     color: #454545;
 }
+
+
+.contact-section {
+    width: 100%;
+    padding: 50px 0px;
+}
+
+.contact-header {
+    font-size: 28px;
+    font-family: "Kanit";
+    color: var(--text-dull);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    width: 90%;
+    margin: auto;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-card-text {
+    font-size: 20px;
+    font-family: "Kanit";
+}
+
+.contact-card-text a {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.contact-card-text a:hover {
+    color: var(--text);
+}
+
+.contact-card-text #instagram-icon {
+    font-size: 22px;
+    background: linear-gradient(27deg, crimson, rgb(221, 53, 221), orange);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.contact-card-text #facebook-icon {
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.contact-card-text #youtube-icon {
+    font-size: 22px;
+    color: red;
+}
+
+.contact-card img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+}
+
+@media (max-width: 930px) {
+    .contact-card img {
+        width: 200px;
+        height: 200px
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-card img {
+        width: 60vw;
+        height: 60vw;
+    }
+}
