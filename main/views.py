@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from .models import Event, EventCategory, FormData, Course, Master, EventCoordinator, CategoryCoordinator, CategoryCoordinatorStudent
-from .models import CategoryCoordinatorFaculty, LatestNews
+from .models import CategoryCoordinatorFaculty, LatestNews, Department
 from django.contrib import messages
 from django.db.models import Q
 from django.http import HttpResponse
@@ -26,17 +26,23 @@ def home(request):
 
     news = LatestNews.objects.all()
 
+    departments = Department.objects.all()
     data = {
         'events': event_chunks,
         'events_mb': event_chunks_mb,
         'events_ct': category_event_list,
         'news_': news,
+        'departments': departments,
     }
     return render(request, 'main/home.html', data)
 
 
 def schedule(request):
-    return render(request, 'main/Coming.html')
+    departments = Department.objects.all()
+    data = {
+        'departments': departments,
+    }
+    return render(request, 'main/Coming.html', data)
 
 
 def index(request):
@@ -47,11 +53,13 @@ def index(request):
     formData = FormData.objects.all()
     courses = Course.objects.all()
 
+    departments = Department.objects.all()
     data = {
         'events': events,
         'event_categories': event_categories,
         'courses': courses,
         'mode': mode,
+        'departments': departments,
     }
 
     if request.method == 'POST':
@@ -126,11 +134,13 @@ def master(request):
         submissions = FormData.objects.all()
         category = EventCategory.objects.all()
         courses = Course.objects.all()
+        departments = Department.objects.all()
         data = {
             'submissions': submissions,
             'categories': category,
             'courses': courses,
-            'count': len(submissions)
+            'count': len(submissions),
+            'departments': departments,
         }
         return render(request, 'main/master.html', data)
     else:
@@ -151,7 +161,12 @@ def master_login(request):
                 return redirect('/master/')
             else:
                 return redirect('/')
-    return render(request, 'main/master-login.html')
+    departments = Department.objects.all()
+    data = {
+        'departments': departments,
+    }
+
+    return render(request, 'main/master-login.html', data)
 
 
 def download_report(request):

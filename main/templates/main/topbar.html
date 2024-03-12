@@ -7,7 +7,14 @@
         <div class="nav-menu">
             <a href="/" class="nav-menu-item" id="home">Home</a>
             <a href="/schedule/" class="nav-menu-item" id="schedule">Schedule</i></a>
-            <a href="/coordinators/" class="nav-menu-item" id="coordinators">Coordinators</a>
+            <div class="nav-menu-item coordinators-menu" id="coordinators">Coordinators<i
+                    class="ri-arrow-down-s-line"></i>
+                <div class="dropdown">
+                    {% for department in departments %}
+                    <a href="/coordinators/{{department.name}}" class="dropdown-item">{{department.name}}</a>
+                    {% endfor %}
+                </div>
+            </div>
             <i class="ri-close-large-fill" id="closeNavBtn"></i>
 
         </div>
@@ -30,5 +37,29 @@
         navMenu.style.display = 'none';
 
     });
+
+    //drop-down
+    const coordinatorsMenu = document.querySelector('.coordinators-menu');
+    const dropdown = document.querySelector('.dropdown');
+
+    function showDropdown() {
+        dropdown.style.display = 'flex';
+    }
+
+    function hideDropdown() {
+        dropdown.style.display = 'none';
+    }
+
+    coordinatorsMenu.addEventListener('mouseenter', showDropdown);
+    coordinatorsMenu.addEventListener('click', showDropdown);
+    coordinatorsMenu.addEventListener('mouseleave', hideDropdown);
+    dropdown.addEventListener('mouseenter', showDropdown);
+    dropdown.addEventListener('mouseleave', hideDropdown);
+
+    dropdown.addEventListener('mouseenter', () => {
+        dropdown.style.display = 'flex';
+    });
+
+
 
 </script>

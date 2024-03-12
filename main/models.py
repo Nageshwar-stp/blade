@@ -96,3 +96,45 @@ class LatestNews(models.Model):
 
     def __str__(self):
         return self.text
+
+
+# DATA-MODELS-PREPARED-FOR-COORDINATORS -------------------->
+
+class Department(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    description = models.CharField(max_length=255, null=True, blank=True)
+    # HEAD FACULTY COORDINATORS
+    cultural = models.CharField(max_length=100, null=True, blank=True)
+    sports = models.CharField(max_length=100, null=True, blank=True)
+    technical = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class EventGroup(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class FactultyCoordinator(models.Model):
+    name = models.CharField(max_length=100)
+    event = models.ForeignKey(EventGroup, null=True, on_delete=models.SET_NULL)
+    department = models.ForeignKey(
+        Department, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return f'{self.name} - {self.event} - {self.department}'
+
+
+class StudentCoordinator(models.Model):
+    name = models.CharField(max_length=100)
+    year = models.CharField(max_length=50)
+    event = models.ForeignKey(EventGroup, null=True, on_delete=models.SET_NULL)
+    department = models.ForeignKey(
+        Department, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return f'{self.name} - {self.year}'

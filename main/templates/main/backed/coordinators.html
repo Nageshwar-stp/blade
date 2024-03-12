@@ -1,0 +1,200 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Coordinators | Euphoric 2024{% endblock title %}
+{% block head %}{% endblock head %}
+
+{% block body %}
+{% include 'main/topbar.html' %}
+<section class="container">
+    <h1 class="container-head"><span>Euphoric 2024</span> Coordinators</h1>
+    <br>
+    <hr>
+    <h3 class="container-sub-head">Faculty Coordinators</h3>
+    <div class="coordinators-prime">
+        {% for category, coordinators in categories %}
+        <div class="prime-item">
+            <h3 class="prime-head">{{ category }}</h3>
+            {% for coordinator in coordinators %}
+            <p class="prime-item-text">{{ coordinator.name }} <span>({{coordinator.department}})</span></p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="coordinators-prime">
+        {% for category, coordinators in categories_fac %}
+        <div class="prime-item">
+            <h3 class="prime-head">{{ category }}</h3>
+            {% for coordinator in coordinators %}
+            <p class="prime-item-text">{{ coordinator.name }} <span>({{coordinator.department}})</span></p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <h3 class="container-sub-head">Student Coordinators</h3>
+    <div class="coordinators-prime">
+        {% for category, coordinators in categoreis_stu %}
+        <div class="prime-item">
+            <h3 class="prime-head">{{ category }}</h3>
+            {% if not coordinators %}
+            <p class="blank-text">* List is currently empty : will be updated soon *</p>
+            {% endif %}
+            {% for coordinator in coordinators %}
+            <p class="prime-item-text">{{ coordinator.name }} <span>({{coordinator.department}})</span></p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <h3 class="container-sub-head">Event Coordinators</h3>
+    <div class="coordinators-lame">
+        {% if blank_event_list %}
+        <p class="blank-text">* List is currently empty : will be updated soon *</p>
+        {% endif %}
+        {% for coordinator in event_coordinators %}
+        <div class="lame-item">
+            <p>{{coordinator.event.name}}</p>
+            <p>{{coordinator.name}} <span>({{coordinator.course}} - {{coordinator.year}} Year)</span></p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+</section>
+{% include 'main/brand.html' %}
+
+<style>
+    .blank-text {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .container-sub-head {
+        text-align: center;
+        margin-top: 20px;
+        color: var(--text-dull);
+    }
+
+    .coordinators-prime {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+        font-family: "Kanit";
+        margin-bottom: 30px;
+    }
+
+    .prime-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+        background: var(--bg-dull);
+        border-radius: 10px;
+    }
+
+    .prime-head {
+        font-size: 20px;
+        letter-spacing: 1px;
+        background: var(--text);
+        color: var(--bg-dull);
+        padding: 5px 20px;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 8px;
+    }
+
+    .prime-item-text {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text);
+        background: var(--bg);
+        width: 100%;
+        padding: 5px 20px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .prime-item-text span {
+        color: var(--primary-dull);
+        margin-left: 5px;
+    }
+
+    @media (max-width: 1000px) {
+        .coordinators-prime {
+            flex-direction: column-reverse;
+        }
+    }
+
+    @media (max-width: 680px) {
+        .coordinators-prime {
+            padding: 0px 14px;
+        }
+
+        .prime-item {
+            gap: 5px;
+            padding: 10px;
+        }
+
+        .prime-head {
+            font-size: 16px;
+            padding: 2px 10px;
+        }
+
+        .prime-item-text {
+            font-size: 12px;
+        }
+    }
+
+    .coordinators-lame {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        font-family: "Kanit";
+        margin-top: 15px;
+        gap: 5px;
+    }
+
+    .lame-item {
+        font-size: 14px;
+        padding: 8px 10px;
+        background: var(--bg-dull);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-weight: 500;
+    }
+
+    .lame-item span {
+        color: var(--primary-dull);
+    }
+
+    @media (max-width: 680px) {
+        .coordinators-lame {
+            padding: 0px 14px;
+        }
+
+        .lame-item {
+            font-size: 12px;
+        }
+    }
+</style>
+
+
+<script>
+    document.getElementById('coordinators').style.color = "var(--primary)";
+</script>
+{% endblock body %}
