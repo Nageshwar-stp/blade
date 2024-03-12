@@ -143,6 +143,10 @@
 }
 
 @media (max-width: 600px) {
+    #desktop-head {
+        display: none
+    }
+
     .overall-bracket {
         flex-direction: column;
     }
