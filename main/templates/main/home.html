@@ -73,8 +73,15 @@
     </div>
 </section>
 
+<div class="cord-section">
+    <h2 class="cord-header">Coordinators @Euphoric 2024</h2>
+    <div class="cord-wrapper">
+        {% for department in departments %}
+        <a href="/coordinators/{{department.name}}/" class="cord-card">{{department.name}}</a>
+        {% endfor %}
+    </div>
+</div>
 
-</section>
 <section class="event-section" id="events">
     <h2 class="event-header">Events @Euphoric 2024</h2>
     <div class="events-bracket" id="desktop-bracket">

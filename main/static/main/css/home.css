@@ -208,7 +208,8 @@
     padding: 50px 20px;
 }
 
-.event-header {
+.event-header,
+.cord-header {
     text-align: center;
     font-size: 28px;
     color: var(--text-dull);
@@ -320,7 +321,8 @@
         padding: 50px 10px;
     }
 
-    .event-header {
+    .event-header,
+    .cord-header {
         font-size: 22px;
     }
 
@@ -703,5 +705,55 @@
     .contact-card img {
         width: 60vw;
         height: 60vw;
+    }
+}
+
+.cord-header {
+    margin-bottom: 20px;
+}
+
+.cord-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    background: var(--text);
+    padding: 50px;
+}
+
+.cord-card {
+    font-size: 16px;
+    background: var(--bg);
+    padding: 30px 20px;
+    min-width: 200px;
+    border-radius: 8px;
+    font-family: "Kanit";
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cord-card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 950px) {
+    .cord-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cord-card {
+        width: 100%;
+        background: var(--text-dull);
+        color: var(--bg);
+    }
+
+    .cord-header {
+        margin-top: 40px;
     }
 }
