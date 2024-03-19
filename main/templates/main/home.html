@@ -81,6 +81,21 @@
         {% endfor %}
     </div>
 </div>
+<section class="news-section">
+    <h2 class="cord-header">What's going on @Euphoric 2024</h2>
+    <div class="news-list">
+        {% for news in big_news %}
+        <div class="news-card" id="news_{{news.id}}" title="Click on Image to View">
+            <img src="{{news.image}}" alt="{{news.title}}" onclick="newsPop('{{news.id}}')" />
+            <div class="news-card-text">
+                <h3>{{news.title}}</h3>
+                <p>{{news.description}}</p>
+                <a class="newsPopClose" id="news_close_{{news.id}}" onclick="closeNewsPop('{{news.id}}')">Close</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 <section class="event-section" id="events">
     <h2 class="event-header">Events @Euphoric 2024</h2>
@@ -191,5 +206,18 @@
     setInterval(changeBackground, 5000); // Repeat every 5 seconds
 
 
+
+
+
+
+    //----------NEWS-POP-UP--------------//
+    const newsPop = (id) => {
+        document.getElementById(`news_${id}`).classList.add('newsPop');
+        document.getElementById(`news_close_${id}`).style.display = 'block';
+    }
+    const closeNewsPop = (id) => {
+        document.getElementById(`news_close_${id}`).style.display = 'none';
+        document.getElementById(`news_${id}`).classList.remove('newsPop');
+    }
 </script>
 {% endblock body %}

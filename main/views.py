@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from .models import Event, EventCategory, FormData, Course, Master, EventCoordinator, CategoryCoordinator, CategoryCoordinatorStudent
-from .models import CategoryCoordinatorFaculty, LatestNews, Department
+from .models import CategoryCoordinatorFaculty, LatestNews, Department, NewsItem
 from django.contrib import messages
 from django.db.models import Q
 from django.http import HttpResponse
@@ -25,6 +25,7 @@ def home(request):
         category_event_list.append((cat.name, events))
 
     news = LatestNews.objects.all()
+    big_news = NewsItem.objects.all()
 
     departments = Department.objects.all()
     data = {
@@ -33,6 +34,7 @@ def home(request):
         'events_ct': category_event_list,
         'news_': news,
         'departments': departments,
+        'big_news': big_news
     }
     return render(request, 'main/home.html', data)
 

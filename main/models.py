@@ -138,3 +138,13 @@ class StudentCoordinator(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.year}'
+
+
+class NewsItem(models.Model):
+    image = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+    description = models.TextField(null=True, blank=True)
+    delete_url = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
