@@ -137,12 +137,15 @@ def master(request):
         category = EventCategory.objects.all()
         courses = Course.objects.all()
         departments = Department.objects.all()
+        events = Event.objects.all().order_by('name')
+
         data = {
             'submissions': submissions,
             'categories': category,
             'courses': courses,
             'count': len(submissions),
             'departments': departments,
+            'events': events
         }
         return render(request, 'main/master.html', data)
     else:

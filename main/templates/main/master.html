@@ -19,6 +19,10 @@
             {% for course in courses %}
             <option value="{{course.name}}">{{course.name}}</option>
             {% endfor %}
+            {% comment %} <option disabled>--- Events ---</option>
+            {% for event in events %}
+            <option value="{{event.name}}">{{event.name}}</option>
+            {% endfor %} {% endcomment %}
         </select>
         <button type="submit">Download Submissions</button>
     </form>
