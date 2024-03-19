@@ -1,0 +1,934 @@
+.cover {
+    width: 100%;
+    height: 90vh;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.cover-image-section {
+    width: 55%;
+    height: 100%;
+    background: url('/static/main/images/sb-1.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: opacity 1s ease-in-out;
+}
+
+.cover-source-text {
+    position: absolute;
+    color: var(--bg);
+    font-size: 10px;
+    bottom: 10px;
+    left: 20px;
+    text-shadow: 0px 0px 10px black;
+}
+
+.cover-text-section {
+    padding: 80px 50px;
+    background: black;
+    background: linear-gradient(to top, black, rgb(40, 40, 40));
+    width: 45%;
+    color: var(--bg);
+    height: 100%;
+    font-family: "Kanit";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('/static/main/images/new/party-banner.png');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.cover-subhead {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--bg-dull);
+    color: rgb(200, 34, 255);
+    color: white;
+}
+
+.cover-head {
+    font-size: 64px;
+    text-transform: uppercase;
+    color: rgb(255, 39, 230);
+    text-shadow: 0px 0px 5px rgb(255, 39, 226);
+    line-height: 10px;
+}
+
+.cover-head span {
+    color: white;
+
+}
+
+.cover-dated {
+    font-size: 18px;
+    color: var(--bg-dull);
+    text-align: right;
+    float: right;
+    background: var(--bg);
+    color: var(--text-dull);
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-family: "Poppins";
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: white;
+    /* display: none; */
+}
+
+.cover-dated span {
+    color: rgb(192, 46, 255);
+    font-weight: 600;
+}
+
+.cover-text {
+    font-size: 15px;
+    margin-top: 20px;
+    font-family: "Poppins";
+    color: rgb(200, 200, 200);
+}
+
+.cover-text a {
+    color: orange;
+}
+
+.cover-action-wrapper {
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.cover-action {
+    font-size: 16px;
+    padding: 12px 20px;
+    background: rgb(98, 0, 255);
+    background: linear-gradient(to bottom, rgb(78, 0, 179), rgb(126, 1, 199));
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.cover-action-second {
+    font-size: 16px;
+    padding: 12px 20px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.cover-action-second:hover {
+    color: var(--bg-dull);
+}
+
+#mobile-bracket {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+
+    .cover-image-section,
+    .cover-text-section {
+        width: 50%;
+    }
+
+    .cover-subhead {
+        font-size: 25px;
+    }
+
+    .cover-head {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 950px) {
+    .cover {
+        flex-direction: column-reverse;
+        height: auto;
+        padding-top: 45px;
+        margin: 0;
+
+    }
+
+    .cover-image-section,
+    .cover-text-section {
+        width: 100%;
+    }
+
+    .cover-image-section {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 650px) {
+    .cover {
+        flex-direction: column;
+    }
+
+    .cover-image-section {
+        height: 250px;
+    }
+
+    .cover-text-section {
+        padding: 30px 15px;
+    }
+
+    .cover-subhead {
+        font-size: 18px;
+    }
+
+    .cover-head {
+        font-size: 42px;
+        line-height: 0;
+        text-shadow: 0px 0px 3px rgb(255, 39, 226);
+    }
+
+    .cover-dated {
+        font-size: 18px;
+        padding: 4px 8px;
+    }
+
+    .cover-text {
+        font-size: 11px;
+    }
+
+    .cover-action-wrapper {
+        gap: 10px;
+    }
+
+    .cover-action,
+    .cover-action-second {
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+}
+
+
+
+/* //---cover-above--- */
+.event-section {
+    width: 100%;
+    margin: auto;
+    padding: 50px 20px;
+    background: url('/static/main/images/new/party-banner-v.png');
+    background-attachment: fixed;
+}
+
+.event-header,
+.cord-header {
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 40px;
+    font-family: "Kanit";
+    font-weight: 600;
+}
+
+.cord-header {
+    color: black;
+}
+
+.events-bracket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.event-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event-card {
+    width: 100%;
+    padding: 30px 30px 50px 30px;
+    border-radius: 10px;
+    background: rgb(40, 40, 40);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kanit";
+    text-align: center;
+    position: relative;
+}
+
+/* 
+.event-row .Sports {
+    background: url('/static/main/images/sports.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-row .Technical {
+    background: url('/static/main/images/technical.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-row .Cultural {
+    background: url('/static/main/images/cultural.png');
+    background-size: cover;
+    background-position: center;
+} */
+
+.event-card:hover {
+    transform: scale(1.02);
+}
+
+.event-card-head {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.event-card-category {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    border-radius: 0px 0px 10px 10px;
+    background: rgb(126, 1, 199);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-family: "Poppins";
+    left: 0;
+}
+
+@media (max-width: 1000px) {
+    .event-card {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 800px) {
+    .event-card {
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    #desktop-bracket {
+        display: none;
+    }
+
+    #mobile-bracket {
+        display: flex;
+    }
+
+    .event-section {
+        width: 100%;
+        padding: 50px 10px;
+    }
+
+    .event-header,
+    .cord-header {
+        font-size: 22px;
+    }
+
+    .events-bracket {
+        gap: 15px;
+        width: 100%;
+    }
+
+    .event-row {
+        gap: 15px;
+    }
+
+    .event-card {
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+        padding-bottom: 30px;
+    }
+
+    .event-card-head {
+        font-size: 11px;
+    }
+
+    .event-card-category {
+        font-size: 12px;
+    }
+}
+
+.key-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 40px 0px;
+    color: var(--bg);
+    background: url('/static/main/images/new/party-banner-v.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+
+.key-header {
+    text-align: center;
+    font-size: 28px;
+    color: var(--bg-dull);
+    font-family: "Kanit";
+    font-weight: 600;
+}
+
+.key-wrapper {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.key-card {
+    width: 100%;
+    background: var(--bg);
+    text-align: center;
+    border-radius: 15px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.3);
+    display: flex;
+    position: relative;
+    font-family: "Kanit";
+    user-select: none;
+}
+
+.key-card-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 0px 10px 5px 10px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.key-card-text h1 {
+    font-size: 14px;
+    color: var(--bg-dull);
+    font-weight: 500;
+}
+
+.key-card-text h2 {
+    font-family: "Poppins";
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: rgb(238, 0, 255);
+    text-shadow: 0px 0px 2px rgb(221, 53, 221);
+    background: black;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.key-card-text h2 i {
+    color: orange;
+    font-size: 17px;
+}
+
+.key-card-text small {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.key-card-text p {
+    font-size: 15px;
+    font-family: "Kanit";
+    margin-top: 10px;
+}
+
+#key-card-1 {
+    background: url("/static/main/images/cards/angad-2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#key-card-2 {
+    background: url("/static/main/images/cards/lost.png");
+    background-position: center;
+    background-size: cover;
+}
+
+#key-card-3 {
+    background: url("/static/main/images/cards/concert.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width: 1100px) {
+    .key-card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 850px) {
+    .key-section {
+        padding: 40px 0px;
+    }
+
+    .key-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .key-card {
+        border: 1px solid rgb(47, 47, 47);
+    }
+}
+
+@media (max-width: 600px) {
+    .key-header {
+        font-size: 22px;
+    }
+}
+
+.div-breaker {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(-45deg, var(--text-dull) 50%, white 50%);
+}
+
+
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.news-wrapper {
+    overflow: hidden;
+}
+
+.ticker-heading {
+    position: absolute;
+    background: var(--primary);
+    display: block;
+    left: 0;
+    top: 0;
+    height: 2.5rem;
+    padding: 11px 14px;
+    z-index: 2;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Kanit";
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    justify-content: center;
+    gap: 2px;
+}
+
+.ticker-wrap .ticker__item:before {
+    content: "";
+    height: 8px;
+    width: 8px;
+    display: inline-block;
+    background-color: var(--primary);
+    border-radius: 100%;
+    position: relative;
+    margin-right: 10px;
+}
+
+/* 
+.ticker-heading:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 11px solid var(--primary);
+    position: absolute;
+    margin-left: 14px;
+} */
+
+.ticker-wrap {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 2.5rem;
+    background-color: white;
+    padding-left: 100%;
+    box-sizing: content-box;
+}
+
+.ticker-wrap .ticker:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.ticker-wrap .ticker {
+    display: inline-block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 35s;
+    animation-duration: 35s;
+}
+
+.ticker-wrap .ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: "Kanit";
+    color: #454545;
+}
+
+
+.contact-section {
+    width: 100%;
+    padding: 50px 0px;
+}
+
+.contact-header {
+    font-size: 28px;
+    font-family: "Kanit";
+    color: var(--text-dull);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    width: 90%;
+    margin: auto;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-card-text {
+    font-size: 20px;
+    font-family: "Kanit";
+}
+
+.contact-card-text a {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.contact-card-text a:hover {
+    color: var(--text);
+}
+
+.contact-card-text #instagram-icon {
+    font-size: 22px;
+    background: linear-gradient(27deg, crimson, rgb(221, 53, 221), orange);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.contact-card-text #facebook-icon {
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.contact-card-text #youtube-icon {
+    font-size: 22px;
+    color: red;
+}
+
+.contact-card img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+}
+
+@media (max-width: 930px) {
+    .contact-card img {
+        width: 200px;
+        height: 200px
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-card img {
+        width: 60vw;
+        height: 60vw;
+    }
+}
+
+
+.cord-header {
+    margin-bottom: 20px;
+}
+
+.cord-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    background: var(--text);
+    padding: 50px;
+    background: url('/static/main/images/new/party-banner-v.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.cord-card {
+    font-size: 16px;
+    background: var(--bg);
+    padding: 30px 20px;
+    min-width: 200px;
+    border-radius: 8px;
+    font-family: "Kanit";
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    background: rgb(30, 30, 30);
+    border-right: 2px solid rgb(192, 46, 255);
+    border-left: 2px solid rgb(192, 46, 255);
+    color: white;
+}
+
+.cord-card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 950px) {
+    .cord-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cord-card {
+        width: 100%;
+        background: rgb(30, 30, 30);
+        border-right: 2px solid rgb(192, 46, 255);
+        border-left: 2px solid rgb(192, 46, 255);
+        color: white;
+    }
+
+    .cord-header {
+        margin-top: 40px;
+    }
+}
+
+.news-section {
+    width: 100%;
+    padding: 50px 0px;
+}
+
+.news-list {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.news-card {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 20px;
+    height: 100%;
+    font-family: "Kanit";
+    cursor: pointer;
+    color: white;
+}
+
+.news-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.2);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.news-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.news-card p {
+    font-size: 12px;
+    color: rgb(200, 200, 200);
+    font-weight: 400;
+}
+
+.newsPop {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80vh;
+    z-index: 10000;
+    gap: 20px;
+    border-top: 1px solid gray;
+    border-radius: 0px;
+    box-shadow: -5px 0px 10px rgb(0, 0, 0, 0.2);
+}
+
+.newsPop img {
+    height: 60vh;
+    width: auto;
+    max-width: 90vw;
+}
+
+.news-card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsPopClose {
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    width: 200px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+.newsPop:hover {
+    transform: translate(0, 0);
+    box-shadow: 0px 0px 0px rgb(0, 0, 0, 0.2);
+}
+
+@media (max-width: 950px) {
+    .news-card img {
+        height: 200px;
+    }
+
+    .newsPop img {
+        height: 60vh;
+        width: auto;
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .news-section {
+        padding: 10px;
+    }
+
+    .news-list {
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .news-card img {
+        height: 220px;
+    }
+
+    .newsPop {
+        height: 90vh;
+    }
+
+    .newsPop img {
+        height: auto;
+        width: auto;
+        max-width: 90vw;
+        max-height: 75vh;
+    }
+}

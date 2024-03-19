@@ -19,7 +19,8 @@ html {
     --text-dull: rgb(60, 60, 60);
     --bg-dull: rgb(230, 230, 230);
     --primary: rgb(0, 10, 230);
-    --primary-dull: rgb(0, 59, 147);
+    --primary: rgb(128, 0, 255);
+    --primary-dull: rgb(93, 0, 185);
     --shadow: rgb(230, 230, 230);
 }
 

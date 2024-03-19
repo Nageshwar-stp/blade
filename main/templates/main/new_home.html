@@ -1,0 +1,223 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Euphoric 2024 | Sanskar Educationl Group{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/new_home.css' %}">
+{% endblock head %}
+
+{% block body %}
+{% include 'main/topbar.html' %}
+
+<section class="cover">
+    <div class="cover-image-section" id="background">
+        <small class="cover-source-text" id="background-source">Image: Sagar Bhatia, Euphoric 2023</small>
+    </div>
+    <div class="cover-text-section">
+        <h2 class="cover-subhead">Sanskar Educationl Group</h2>
+        <h1 class="cover-head">Euphoric <span>2024</span></h1>
+        <h3 class="cover-dated"><span>8th April</span> - <span>13th April</span>, 2024</h3>
+        <p class="cover-text">
+            Euphoric is the annual festival of <a href="https://sanskareducationalgroup.ac.in/" target="_blank">Sanskar
+                Educational Group</a> that incorporates a wide range
+            of
+            dynamic
+            events. Euphoric aims to ignite the competitive spirit among young minds. It provides them with a plethora
+            of competitions and activities to perform and sharpen up their skills.
+        </p>
+        <p class="cover-text">
+            Helps the students in enhancing their knowledge, aptitude and problem-solving ability. Our
+            objective is to provide a fun and practical experience which will help the participants in improving their
+            research and analytical thinking skills.
+        </p>
+        <div class="cover-action-wrapper">
+            <a href="/register/" class="cover-action">Participate Now</a>
+            <a href="#events" class="cover-action-second">Check Events</a>
+        </div>
+    </div>
+</section>
+<div class="news-wrapper">
+    <div class="ticker-wrap">
+        <div class="ticker-heading"><i class="ri-flashlight-fill"></i> Latest Updates</div>
+        <div class="ticker">
+            {% for news in news_ %}
+            <div class="ticker__item">{{news.text}}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<section class="key-section">
+    <h3 class="key-header">Attraction @Euphoric 2024</h3>
+    <div class="key-wrapper">
+        <div class="key-card" id="key-card-2">
+            <div class="key-card-text">
+                <h1>Music Band</h1>
+                <h2><i class="ri-star-fill"></i>The Lost Fireflies<i class="ri-star-fill"></i></h2>
+                <small></small>
+                <p>Live Performing @Euphoric'24 (12th April)</p>
+            </div>
+        </div>
+        <div class="key-card" id="key-card-1">
+            <div class="key-card-text">
+                <h1>Stand-Up Comedy</h1>
+                <h2><i class="ri-star-fill"></i>Angad Singh Ranyal<i class="ri-star-fill"></i></h2>
+                <p>Live Performing @Euphoric'24 (13th April)</p>
+            </div>
+        </div>
+        <div class="key-card" id="key-card-3">
+            <div class="key-card-text">
+                <h1>DJ Night</h1>
+                <h2><i class="ri-star-fill"></i>Dance, Music and DJ<i class="ri-star-fill"></i></h2>
+                <p> @Euphoric'24 (13th April)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cord-section">
+    <h2 class="cord-header">Coordinators @Euphoric 2024</h2>
+    <div class="cord-wrapper">
+        {% for department in departments %}
+        <a href="/coordinators/{{department.name}}/" class="cord-card">{{department.name}}</a>
+        {% endfor %}
+    </div>
+</div>
+<section class="news-section">
+    <h2 class="cord-header">What's going on @Euphoric 2024</h2>
+    <div class="news-list">
+        {% for news in big_news %}
+        <div class="news-card" id="news_{{news.id}}" title="Click on Image to View">
+            <img src="{{news.image}}" alt="{{news.title}}" onclick="newsPop('{{news.id}}')" />
+            <div class="news-card-text">
+                <h3>{{news.title}}</h3>
+                <p>{{news.description}}</p>
+                <a class="newsPopClose" id="news_close_{{news.id}}" onclick="closeNewsPop('{{news.id}}')">Close</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="event-section" id="events">
+    <h2 class="event-header">Events @Euphoric 2024</h2>
+    <div class="events-bracket" id="desktop-bracket">
+        {% for event_ in events %}
+        <div class="event-row">
+            {% for event in event_ %}
+            <a class="event-card {{event.category}}" href="/register/?event1={{event.name}}"
+                title="Click to Participate">
+                <h3 class="event-card-head">{{event.name}}</h3>
+                <h4 class="event-card-category">{{event.category}}</h4>
+            </a>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="events-bracket" id="mobile-bracket">
+        {% for event_ in events_mb %}
+        <div class="event-row">
+            {% for event in event_ %}
+            <a class="event-card {{event.category}}" href="/register/?event1={{event.name}}"
+                title="Click to Participate">
+                <h3 class="event-card-head">{{event.name}}</h3>
+                <h4 class="event-card-category">{{event.category}}</h4>
+            </a>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="contact-section">
+    <h1 class="contact-header">Connect @Euphoric 2024</h1>
+    <div class="contact-container">
+        <div class="contact-card">
+            <img src="{% static 'main/images/qr-codes/instagram.png' %}" alt="Instagram QR">
+            <div class="contact-card-text">
+                <i class="ri-instagram-fill" id="instagram-icon"></i>
+                <a href="https://www.instagram.com/sanskar_educational_group/" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="contact-card">
+            <img src="{% static 'main/images/qr-codes/facebook.png' %}" alt="Instagram QR">
+            <div class="contact-card-text">
+                <i class="ri-facebook-fill" id="facebook-icon"></i>
+                <a href="https://www.facebook.com/SanskarGhaziabad/" target="_blank">Facebook</a>
+            </div>
+        </div>
+        <div class="contact-card">
+            <img src="{% static 'main/images/qr-codes/youtube.png' %}" alt="Instagram QR">
+            <div class="contact-card-text">
+                <i class="ri-youtube-fill" id="youtube-icon"></i>
+                <a href="https://www.youtube.com/channel/UCJmT3wexIq9ekJYTLlZbFZQ" target="_blank">YouTube</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% include 'main/brand.html' %}
+<script>
+    document.getElementById('home').style.color = "var(--primary)";
+
+    const backgrounds = [
+        "url('/static/main/images/cards/angad_singh.jpg')",
+        "url('/static/main/images/cards/lost_fireflies.png')",
+        "url('/static/main/images/cards/angad-2.jpg')",
+        "url('/static/main/images/cards/lost.png')",
+        "url('/static/main/images/cards/angad-3.jpg')",
+        // "url('/static/main/images/trophy-celeb.jpg')",
+        // "url('/static/main/images/spo-5.jpg')",
+        // "url('/static/main/images/stu-1.jpg')",
+        // "url('/static/main/images/utsav-1.jpg')",
+        // "url('/static/main/images/spo-2.jpg')",
+        // "url('/static/main/images/coor-1.jpg')",
+
+    ];
+    const backgroundSources = [
+        "Image: Angad Singh Ranyal will Perform live @Euphoric 2024",
+        "Image: The Lost Fireflies Band will Perform live @Euphoric 2024",
+        "Image: Angad Singh Ranyal will Perform live @Euphoric 2024",
+        "Image: The Lost Fireflies Band will Perform live @Euphoric 2024",
+        "Image: Angad Singh Ranyal will Perform live @Euphoric 2024",
+        // "Image: Trophy Ceremony, Euphoric 2023",
+        // "Image: Cricket Team, Euphoric 2023",
+        // "Image: Student Performing, Euphoric 2023",
+        // "Image: Student Performing, Euphoric 2023",
+        // "Image: Volleyball Match, Euphoric 2023",
+        // "Image: Award Distribution, Euphoric 2023",
+    ];
+
+    let currentIndex = 0;
+    const backgroundElement = document.getElementById('background');
+    const backgroundSource = document.getElementById('background-source');
+
+    function changeBackground() {
+        backgroundElement.style.opacity = 0;
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            backgroundElement.style.backgroundImage = backgrounds[currentIndex];
+            backgroundSource.innerHTML = backgroundSources[currentIndex]; // Corrected line
+            backgroundElement.style.opacity = 1;
+        }, 800);
+    }
+
+    backgroundElement.style.backgroundImage = backgrounds[currentIndex];
+    backgroundSource.innerHTML = backgroundSources[currentIndex]; // Corrected line
+
+    // Start changing backgrounds
+    setInterval(changeBackground, 5000); // Repeat every 5 seconds
+
+
+
+
+
+
+    //----------NEWS-POP-UP--------------//
+    const newsPop = (id) => {
+        document.getElementById(`news_${id}`).classList.add('newsPop');
+        document.getElementById(`news_close_${id}`).style.display = 'block';
+    }
+    const closeNewsPop = (id) => {
+        document.getElementById(`news_close_${id}`).style.display = 'none';
+        document.getElementById(`news_${id}`).classList.remove('newsPop');
+    }
+</script>
+{% endblock body %}

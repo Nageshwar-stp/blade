@@ -36,7 +36,7 @@ def home(request):
         'departments': departments,
         'big_news': big_news
     }
-    return render(request, 'main/home.html', data)
+    return render(request, 'main/new_home.html', data)
 
 
 def schedule(request):
