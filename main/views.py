@@ -44,7 +44,7 @@ def schedule(request):
     data = {
         'departments': departments,
     }
-    return render(request, 'main/Coming.html', data)
+    return render(request, 'main/schedule.html', data)
 
 
 def index(request):

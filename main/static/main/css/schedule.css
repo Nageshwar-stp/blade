@@ -1,0 +1,88 @@
+.schedule-container {
+    width: 100%;
+    padding-top: 85px;
+    min-height: 100vh;
+}
+
+.schedule-header {
+    font-size: 22px;
+    font-family: "Kanit";
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.schedule-header span {
+    color: var(--primary);
+}
+
+.schedule-subhead {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: "Kanit";
+    color: var(--text-dull);
+}
+
+.schedule-wrapper {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid rgb(120, 120, 120);
+}
+
+.schedule-wrapper-headers {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+}
+
+.schedule-wrapper-headers h3 {
+    width: 100%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 8px 10px;
+    font-size: 16px;
+    font-family: "Kanit";
+    color: white;
+}
+
+.schedule-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-item-unit {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid rgb(120, 120, 120);
+    font-size: 14px;
+    font-family: "Kanit";
+    color: rgb(40, 40, 40);
+}
+
+@media (max-width: 900px) {
+    .schedule-wrapper {
+        width: 98%;
+    }
+
+    .schedule-wrapper-headers h3 {
+        font-size: 10px;
+    }
+
+    .schedule-item-unit {
+        font-size: 8px;
+        padding: 5px 5px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .schedule-container {
+        padding-top: 60px;
+    }
+}
