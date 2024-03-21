@@ -81,6 +81,10 @@
         {% endfor %}
     </div>
 </div>
+
+<a class="lan-section" href="/register/" title="Click to Participate">
+    <img src="{% static 'main/images/new/cultural_banner.png' %}" alt="Banner">
+</a>
 <section class="news-section">
     <h2 class="cord-header">What's going on @Euphoric 2024</h2>
     <div class="news-list">
@@ -96,6 +100,10 @@
         {% endfor %}
     </div>
 </section>
+<br>
+<a class="lan-section" href="/register/?event1=LAN%20Game" title="Click to Participate">
+    <img src="{% static 'main/images/new/counter_strike_banner.png' %}" alt="Banner">
+</a>
 
 <section class="event-section" id="events">
     <h2 class="event-header">Events @Euphoric 2024</h2>
@@ -126,6 +134,11 @@
         {% endfor %}
     </div>
 </section>
+
+<a class="lan-section" href="/register/" title="Click to Participate">
+    <img src="{% static 'main/images/new/sports_banner.png' %}" alt="Banner">
+</a>
+
 <section class="contact-section">
     <h1 class="contact-header">Connect @Euphoric 2024</h1>
     <div class="contact-container">
@@ -153,6 +166,8 @@
 
     </div>
 </section>
+
+
 {% include 'main/brand.html' %}
 <script>
     document.getElementById('home').style.color = "var(--nav-active)";

@@ -932,3 +932,17 @@
         max-height: 75vh;
     }
 }
+
+.lan-section {
+    width: 100%;
+}
+
+.lan-section img {
+    width: 100%;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.lan-section img:hover {
+    transform: scale(1.01);
+}
