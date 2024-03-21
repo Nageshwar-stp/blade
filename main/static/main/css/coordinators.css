@@ -2,7 +2,7 @@
     text-align: center;
     font-size: 20px;
     margin-top: 10px;
-    color: var(--text-dull);
+    color: black;
     font-family: "Kanit";
     font-weight: 500;
 }
@@ -11,7 +11,7 @@
     text-align: center;
     font-size: 12px;
     font-family: "Kanit";
-    color: var(--text-dull);
+    color: black;
     margin-top: 10px;
 }
 
@@ -20,8 +20,7 @@
     width: 100%;
     font-family: "Kanit";
     border-radius: 5px;
-    color: var(--text-dull);
-    border: 1px solid rgb(230, 230, 230);
+    color: black;
 }
 
 .overall-wrapper {
@@ -38,15 +37,16 @@
     padding: 10px;
     font-size: 18px;
     font-weight: 600;
-    background: var(--bg-dull);
-    border: 1px solid rgb(230, 230, 230);
+    color: white;
+    background: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 .overall-bracket {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
     width: 100%;
 }
 
@@ -55,7 +55,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
     width: 100%;
 }
 
@@ -65,7 +65,7 @@
     font-weight: 600;
     padding: 5px;
     text-align: center;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
 }
 
 .overall-column p {
@@ -73,7 +73,7 @@
     font-size: 15px;
     padding: 5px;
     text-align: center;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
 }
 
 .wrapper-break {
@@ -84,7 +84,7 @@
 .coordinator-row {
     display: flex;
     width: 100%;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
 }
 
 .event-block {
@@ -94,20 +94,21 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
     padding: 10px;
-    background: var(--bg-dull);
+    color: white;
+    background: var(--primary);
 }
 
 .coordinator-block {
     width: 100%;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
 }
 
 .coordinator-item {
     text-align: left;
     padding: 5px;
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid var(--primary);
     font-size: 14px;
 }
 
@@ -160,6 +161,6 @@
     }
 
     .event-block {
-        background: var(--bg);
+        background: var(--primary);
     }
 }

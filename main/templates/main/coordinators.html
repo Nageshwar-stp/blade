@@ -8,12 +8,13 @@
 {% block body %}
 {% include 'main/topbar.html' %}
 <section class="container">
-    <h1 class="container-head">Euphoric 2024 Coordinators</h1>
+    <h1 class="container-head"><span>Euphoric 2024</span> Coordinators</h1>
     <h3 class="container-subhead">{{department.name}} Department</h3>
     <p class="container-text">{{department.description}}</p>
     <div class="wrapper">
         <div class="overall-wrapper">
             <h3 class="wrapper-header">Overall Coordinators</h3>
+            <br>
             <div class="overall-bracket">
                 <div class="overall-column">
                     <h3>Cultural</h3>
@@ -32,7 +33,8 @@
         <!-- ------------------- -->
         <div class="wrapper-break"></div>
         <div class="coordinator-wrapper">
-            <h3 class="wrapper-header">All Coordinators</h3>
+            <br>
+            <h3 class="wrapper-header">All Coordinators</h3><br>
             <div class="wrapper-break"></div>
             <div class="overall-bracket" id="desktop-head">
                 <div class="overall-column">
@@ -45,6 +47,7 @@
                     <h3>Student</h3>
                 </div>
             </div>
+            <br>
             {% for coordinator in coordinators %}
             <div class="coordinator-row">
                 <div class="event-block">
