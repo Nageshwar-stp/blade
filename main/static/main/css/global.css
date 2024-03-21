@@ -20,6 +20,7 @@ html {
     --bg-dull: rgb(230, 230, 230);
     --primary: rgb(0, 10, 230);
     --primary: rgb(128, 0, 255);
+    --nav-active: rgb(203, 151, 255);
     --primary-dull: rgb(93, 0, 185);
     --shadow: rgb(230, 230, 230);
 }

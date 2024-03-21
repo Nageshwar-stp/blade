@@ -39,14 +39,14 @@
     font-weight: 600;
     color: white;
     background: var(--primary);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
 }
 
 .overall-bracket {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
     width: 100%;
 }
 
@@ -55,7 +55,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
     width: 100%;
 }
 
@@ -65,7 +65,7 @@
     font-weight: 600;
     padding: 5px;
     text-align: center;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
 }
 
 .overall-column p {
@@ -73,7 +73,7 @@
     font-size: 15px;
     padding: 5px;
     text-align: center;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
 }
 
 .wrapper-break {
@@ -84,7 +84,7 @@
 .coordinator-row {
     display: flex;
     width: 100%;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
 }
 
 .event-block {
@@ -94,21 +94,21 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
     padding: 10px;
     color: white;
-    background: var(--primary);
+    background: var(--text-dull);
 }
 
 .coordinator-block {
     width: 100%;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
 }
 
 .coordinator-item {
     text-align: left;
     padding: 5px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--text-dull);
     font-size: 14px;
 }
 
@@ -161,6 +161,6 @@
     }
 
     .event-block {
-        background: var(--primary);
+        background: var(--text-dull);
     }
 }
